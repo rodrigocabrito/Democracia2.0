@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active {
+    color: black;
+}
+
+.form-box {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background-color: transparent;
+    border: 3px solid rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(25px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.form-data {
+    margin-top: 80px;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url("../images/democracia_background4.jpg");
+    background-size: cover;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 80%;
+    height: 30px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+button:hover {
+    cursor: pointer;
+    box-shadow: rgba(18, 24, 43) 0 3px;
+}
+
+img {
+    width: 70px;
+    position: absolute;
+    right: 42%;
+    top: 20%;
+}

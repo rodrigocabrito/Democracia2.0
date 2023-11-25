@@ -1,0 +1,383 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url("../images/democracia_background4.jpg") no-repeat;
+    background-size: cover;
+}
+
+.form-box {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: transparent;
+    border: 3px solid rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(25px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.form-box-consultarProjetoLei,
+.form-box-listarProjetosLei,
+.form-box-consultarVotacao,
+.form-box-home,
+.form-box-login,
+.form-box-apresentarProjetoLei {
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    background: transparent;
+    border: 3px solid rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(25px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.form-box-consultarProjetoLei {
+    max-width: 100vh;
+}
+
+.form-box-consultarVotacao {
+    max-width: 50vh;
+}
+
+.form-box-home {
+    width: 370px;
+}
+
+.form-table-list th {
+    padding: 10px;
+    font-size: 2em;
+    color: #fff;
+}
+
+.form-table-list td {
+    padding: 10px;
+    font-size: 1.1em;
+    color: #fff;
+}
+
+.form-table-list td.a:hover {
+    cursor: pointer;
+    color: rgba(18, 24, 43);
+}
+
+h1 {
+    font-size: 3.5em;
+    color: #fff;
+    text-align: center;
+    margin: 50px 100px 50px 100px;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.3em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-data,
+.form-data-apresentarProjetoLei {
+    display: grid;
+}
+
+.form-data-login {
+    display: grid;
+}
+
+.form-data-login input{
+    width: 80%;
+    margin-left: 27px;
+    height: 20px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    font-size: 1em;
+    text-align: center;
+}
+
+.form-data-login label {
+    margin-left: 27px;
+    margin-bottom: 10px;color: #fff;
+
+}
+
+.form-data-apresentarProjetoLei {
+    max-width: 90%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.form-data-apresentarProjetoLei label {
+    color: #fff;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.form-data-apresentarProjetoLei input[type="file"] {
+    padding: 10px;
+}
+
+.form-data-apresentarProjetoLei input[type="file"]:hover {
+    cursor: pointer;
+}
+
+.form-data-apresentarProjetoLei input {
+    height: 30px;
+    font-size: 1em;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0 35px 0 5px;
+    color: #fff;
+}
+
+.form-data-apresentarProjetoLei textarea {
+    border: none;
+    outline: 1px solid #fff;
+    background: transparent;
+    padding: 0 35px 0 5px;
+    color: #fff;
+    resize: none;
+    font-size: 1em;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.form-data-apresentarProjetoLei textarea:hover {
+    outline: 1px solid rgba(18, 24, 43)
+}
+
+.form-data-apresentarProjetoLei select {
+    border: none;
+    outline: none;
+    margin-top: 5px;
+    font-size: 1em;
+}
+
+.form-table {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+}
+
+.form-table th {
+    font-size: 1.3em;
+    width: auto;
+    color: #fff;
+    padding-right: 20px;
+    text-align: center;
+}
+
+.form-table td,
+.form-table-list td{
+    text-align: center;
+}
+
+.form-table td {
+    font-size: 1.1em;
+    width: auto;
+    border-bottom: 2px solid white;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 310px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #fff;
+}
+
+.input-box:hover {
+    border-bottom: 2px solid rgba(18, 24, 43);
+}
+
+.form-data button {
+    margin: 20px;
+    padding: 13px;
+    font-size: larger;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+}
+
+.form-data button:hover {
+    cursor: pointer;
+    box-shadow: rgba(18, 24, 43) 0 3px;
+}
+
+.form-submit input,
+.form-submit button {
+    width: 90%;
+    height: 35px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 1em;
+}
+
+.form-submit input:hover,
+.form-submit-login button:hover {
+    cursor: pointer;
+    box-shadow: rgba(18, 24, 43) 0 3px;
+}
+
+.form-submit-login button {
+    width: 70%;
+    height: 30px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    margin: 40px 0 20px 60px;
+}
+
+.form-data-apresentarProjetoLei-corrector {
+    margin-left: 35px;
+}
+
+.noProjetosLei,
+.data-tabela {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.home-button {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.home-button button {
+    width: 70px;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 1em;
+    border: none;
+    outline: none;
+}
+
+.home-button button:hover {
+    cursor: pointer;
+    border: 2px solid rgba(18, 24, 43);
+}
+
+.form-submit-consultarProjetoLei {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-submit-consultarProjetoLei button {
+    width: 350px;
+    height: 40px;
+    font-size: 1.5em;
+    border: none;
+    outline: none;
+}
+
+.form-table th {
+    max-width: 200px;
+}
+
+.form-data select {
+    width: 60%;
+    margin-left: 80px;
+    outline: none;
+    border: none;
+    font-size: 1em;
+}
+
+.form-data select option {
+    font-size: 1em;
+}
+
+.form-data label {
+    font-size: 1.2em;
+    color: #fff;
+    margin-bottom: 10px;
+    margin-left: 80px;
+}
+
+#escolher {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    border: 1px solid #fff;
+    outline: none;
+    color: black;
+}
+
+#escolher:hover {
+    cursor: pointer;
+    border: 1px solid rgba(18, 24, 43);
+}
+
+#projetoLei {
+    color: #fff;
+}
+
+#projetoLei:hover {
+    cursor: pointer;
+    color: #d7d7d7;
+}
+
+#projetoLei:active {
+    color: white;
+}
+
+#votacao {
+    color: #fff;
+}
+
+#votacao:hover {
+    cursor: pointer;
+    color: #d7d7d7;
+}
+
+#votacao:active {
+    color: white;
+}
+
+.a_home {
+    color: black;
+}
+
+.a_home:active {
+    color: black;
+}

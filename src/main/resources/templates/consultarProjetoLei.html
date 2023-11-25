@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Democracia 2.0</title>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="home-button">
+                <a th:href="@{/home}">
+                    <button>Home</button>
+                </a>
+            </div>
+            <div class="form-box-consultarProjetoLei">
+                <div class="form-data">
+                    <h2>Projeto Lei:</h2>
+
+                    <div class="form-table">
+                        <table>
+                            <tr>
+                                <th>Titulo:</th>
+                                <td th:text="${projetoLei.titulo}"></td>
+                            </tr>
+                            <tr>
+                                <th>Descrição:</th>
+                                <td th:text="${projetoLei.descricao}">
+                            </tr>
+                            <tr>
+                                <th>Data Limite:</th>
+                                <td th:text="${projetoLei.dataLimite}"></td>
+                            </tr>
+                            <tr>
+                                <th>Nr Apoiantes:</th>
+                                <td th:text="${projetoLei.getApoios()}"></td>
+                            </tr>
+                            <tr>
+                                <th>Tema:</th>
+                                <td th:text="${projetoLei.tema.getDesignacao()}"></td>
+                            </tr>
+                            <tr>
+                                <th>Delegado:</th>
+                                <td th:text="${projetoLei.delegado.getNome()}"></td>
+                            </tr>
+                            <tr>
+                                <th>Status:</th>
+                                <td th:text="${projetoLei.status}"></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <div class="form-submit-consultarProjetoLei">
+                        <form method="post" action="/apoiarProjetoLei">
+                            <input type="hidden" name="projetoId" th:value="${projetoLei.id}">
+                            <button type="submit" name="button" value="Yes">Apoiar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

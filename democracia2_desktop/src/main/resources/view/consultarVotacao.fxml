@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane fx:controller="com.example.democracia2_desktop.presentation.controllers.PresentationVotacaoController"
+           xmlns:fx="http://javafx.com/fxml/1">
+
+    <VBox spacing="10">
+        <padding>
+            <Insets top="10" left="10" right="10" bottom="10"/>
+        </padding>
+        <Button fx:id="goToMenuButton" text="🏠 Home" onAction="#goToMenuView" />
+        <Button fx:id="goToListarVotacoesButton" text="← Voltar" onAction="#goToListarVotacoesView" />
+        <TextField fx:id="idField" editable="false" />
+        <TextField fx:id="projetoLeiField" editable="false" />
+        <TextField fx:id="dataFechoField" editable="false" />
+        <TextField fx:id="votosAFavorField" editable="false" />
+        <TextField fx:id="votosContraField" editable="false" />
+        <TextField fx:id="delegadoPropField" editable="false" />
+        <TextField fx:id="statusField" editable="false" />
+        <TextField fx:id="votacaoResultField" editable="false" />
+
+        <Button fx:id="votarVotacaoButtonF" text="Votar a favor" onAction="#votarVotacaoFavor"/>
+        <Button fx:id="votarVotacaoButtonC" text="Votar contra" onAction="#votarVotacaoContra"/>
+        <ListView fx:id="listView" visible="false" />
+    </VBox>
+</StackPane>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <title>Democracia 2.0</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="home-button">
+                <a th:href="@{/home}">
+                  <button>Home</button>
+                </a>
+            </div>
+            <div class="form-box">
+                <form th:action="@{/escolherDelegado}" method="post">
+                    <h3>Escolha o tema que quer associar ao delegado <span th:text="${delegado.get().nome}"></span></h3>
+                    <input type="hidden" name="delegadoId" th:value="${delegado.get().id}" />
+                    <div class="form-data">
+                        <label for="tema">Tema:</label>
+                        <select name="tema" id="tema">
+                            <option th:each="tema : ${temas}" th:value="${tema.designacao}" th:text="${tema.designacao}"></option>
+                        </select>
+                        <button type="submit" name="button" value="Yes">Confirmar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

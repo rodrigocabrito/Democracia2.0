@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+
+<BorderPane fx:controller="com.example.democracia2_desktop.presentation.controllers.MenuController"
+            xmlns:fx="http://javafx.com/fxml/1" fx:id="mainView">
+
+    <top>
+        <MenuBar fx:id="menuBar">
+            <Menu text="Ficheiro">
+                <MenuItem text="📂 Abrir" onAction="#load"/>
+                <MenuItem text="💾 Guardar"/>
+                <SeparatorMenuItem />
+                <MenuItem text="📴 Sair" onAction="#exit"/>
+            </Menu>
+            <Menu text="Navegação">
+                <MenuItem text="Projetos de Lei" onAction="#goToListarProjetosLeiView"/>
+                <MenuItem text="Votacoes" onAction="#goToListarVotacoesView"/>
+            </Menu>
+            <Menu text="Preferências">
+                <MenuItem text="🌙 Modo escuro"/>
+                <MenuItem text="☀  Modo claro"/>
+            </Menu>
+            <Menu text="Janela">
+                <MenuItem text="🔎 Zoom +" />
+                <MenuItem text="🔎 Zoom -" />
+                <MenuItem text="🔔 Notificações" />
+                <SeparatorMenuItem />
+                <MenuItem text="Ecrã Inteiro" />
+            </Menu>
+            <Menu text="Ajuda">
+                <MenuItem text="🕷 Reportar um bug "/>
+                <MenuItem text="ℹ    Sobre..."/>
+                <SeparatorMenuItem />
+                <MenuItem text="⚠ Pedir ajuda"/>
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" left="10" right="10" bottom="10"/>
+            </padding>
+            <Button fx:id="logoutButton" text="Logout" onAction="#goToLoginView" />
+            <Button fx:id="goToListarProjetosLeiButton" text="Go to Listar Projetos Lei" onAction="#goToListarProjetosLeiView" />
+            <Button fx:id="goToListarVotacoesButton" text="Go to Listar Votacoes" onAction="#goToListarVotacoesView" />
+        </VBox>
+    </center>
+</BorderPane>

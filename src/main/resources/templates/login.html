@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-PT" th:fragment="layout (content)" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Democracia 2.0</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+
+<body>
+    <section>
+        <div class="form-box-login">
+            <div>
+                <h1>Login</h1>
+                <form method="post" action="/login">
+                    <div class="form-data-login">
+                      <label for="nrCC">Cartão de Cidadão:</label>
+                      <input type="number" id="nrCC" name="nrCC" placeholder="Bem vindo!" required min="0">
+                    </div>
+                    <div class="form-submit-login">
+                        <button type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

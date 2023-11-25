@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <title>Democracia 2.0</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="home-button">
+                <a th:href="@{/home}">
+                    <button>Home</button>
+                </a>
+            </div>
+            <div class="form-box-consultarVotacao">
+                <div class="form-data">
+                    <h2>Votacao:</h2>
+                    <div class="form-table">
+                        <table>
+                          <tr>
+                            <th>Projeto de Lei:</th>
+                            <td th:text="${votacao.projetoLei.titulo}"></td>
+                          </tr>
+                          <tr>
+                            <th>Data Fecho:</th>
+                            <td th:text="${votacao.dataFecho}"></td>
+                          </tr>
+                          <tr>
+                            <th>Votos a favor:</th>
+                            <td th:text="${votacao.votosAFavor}"></td>
+                          </tr>
+                          <tr>
+                            <th>Votos contra:</th>
+                            <td th:text="${votacao.votosContra}"></td>
+                          </tr>
+                          <tr>
+                            <th>Delegado:</th>
+                            <td th:text="${votacao.delegadoProp.nome}"></td>
+                          </tr>
+                          <tr>
+                            <th>Status:</th>
+                            <td th:text="${votacao.status}"></td>
+                          </tr>
+                          <tr th:if="${showResult}">
+                            <th>Resultado:</th>
+                            <td th:text="${votacao.votacaoResult}"></td>
+                          </tr>
+                          <tr>
+                          <tr th:if="${delegado}">
+                            <th>Delegado associado ao tema e o seu voto:</th>
+                            <td>
+                                <span th:text="${delegado.nome}"></span>
+                                <span>-</span>
+                                <span th:text="${delegadoVoto}"></span>
+                            </td>
+                          </tr>
+                          <tr th:unless="${delegado}">
+                                <th>Não tem delegado associado</th>
+                          </tr>
+                        </table>
+                    </div>
+                    <div class="form-submit">
+
+                    <form method="post" action="/votarVotacao">
+                      <input type="hidden" name="id" th:value="${votacao.id}" />
+                        <button th:if="${delegado}" type="submit" name="button" value="delegadoVote" >Concordar com o voto delegado</button>
+                      <button type="submit" name="button" value="FAVOR" >Votar a favor</button>
+                      <button type="submit" name="button" value="CONTRA" >Votar contra</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+</body>
+</html>

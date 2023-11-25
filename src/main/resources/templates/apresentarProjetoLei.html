@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <title>Democracia 2.0</title>
+</head>
+<body>
+  <section>
+      <div class="container">
+          <div class="home-button">
+              <a th:href="@{/home}">
+                  <button>Home</button>
+              </a>
+          </div>
+          <div class="form-box-apresentarProjetoLei">
+              <form action="#" th:action="@{/projetosLei/new}" th:object="${projetoLei}" method="post">
+                <h3>Adicionar Projeto Lei:</h3>
+                  <div class="form-data-apresentarProjetoLei-corrector">
+
+                      <div class="error" th:text="${error}"></div>
+
+                      <div class="form-data-apresentarProjetoLei">
+                          <div class="input-box">
+                              <label for="titulo">Titulo:</label>
+                              <input name="titulo" id="titulo" th:field="*{titulo}" required/>
+                          </div>
+
+                          <div class="textarea-box">
+                              <label for="descricao">Descricao:</label>
+                              <textarea name="descricao" id="descricao" th:field="*{descricao}" rows="5" cols="33" required></textarea>
+                          </div>
+
+                          <div class="form-field">
+                              <label for="anexoPDF">Anexo PDF:</label>
+                              <input type="file" id="anexoPDF" name="anexoPDF" accept=".pdf" required>
+                          </div>
+
+                          <div class="input-box">
+                              <label for="dataLimite">Data Limite:</label>
+                              <input type="datetime-local" name="dataLimite" id="dataLimite" th:field="*{dataLimite}" required/>
+                              <span id="warningMessage" style="color: rgb(0,0,0); display: none;">Escolha uma data futura até no maximo um ano.</span>
+                          </div>
+
+                          <script>
+                              const dataLimiteInput = document.getElementById("dataLimite");
+                              const warningMessage = document.getElementById("warningMessage");
+
+                              dataLimiteInput.addEventListener("change", function() {
+                                  const selectedDate = new Date(this.value);
+                                  const currentDate = new Date();
+                                  const plusYearDate = new Date(currentDate.getFullYear() + 1, currentDate.getMonth(), currentDate.getDate());
+
+                                  if (selectedDate < currentDate || selectedDate > plusYearDate) {
+                                      warningMessage.style.display = "inline";
+                                      warningMessage.style.fontWeight = "bold";
+                                  } else {
+                                      warningMessage.style.display = "none";
+                                  }
+                              });
+                          </script>
+
+                          <div class="form-field">
+                              <label for="tema">Tema:</label>
+                              <select name="tema" id="tema" required>
+                                  <option th:each="tema : ${temas}" th:value="${tema.id}" th:text="${tema.designacao}" ></option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+                      <div class="form-submit">
+                          <input type="submit" value="Apresentar"/>
+                      </div>
+              </form>
+          </div>
+      </div>
+  </section>
+</body>
+</html>

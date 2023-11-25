@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+    <StackPane fx:controller="com.example.democracia2_desktop.presentation.controllers.PresentationVotacaoController"
+               xmlns:fx="http://javafx.com/fxml/1">
+
+    <VBox spacing="10">
+        <padding>
+            <Insets top="10" left="10" right="10" bottom="10"/>
+        </padding>
+        <Button fx:id="goToMenuButton" text="← Voltar" onAction="#goToMenuView" />
+        <ListView fx:id="listView" onMouseClicked="#goToConsultarVotacaoView" />
+    </VBox>
+    </StackPane>

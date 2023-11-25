@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <title>Democracia 2.0</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="home-button">
+                <a th:href="@{/home}">
+                    <button>Home</button>
+                </a>
+            </div>
+            <div class="form-box-listarProjetosLei">
+                  <table class="form-table-list">
+                    <thead>
+                        <tr>
+                          <th>id</th>
+                          <th>|</th>
+                          <th>Titulo</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr th:if="${projetosLei.isEmpty()}">
+                          <td class="noProjetosLei" colspan="3" style="text-align: center;">Não há Projetos de Lei !</td>
+                        </tr>
+                        <tr th:each="projetoLei : ${projetosLei}">
+                          <td class="data-tabela" th:text="${projetoLei.id}"></td>
+                          <td>|</td>
+                          <td><a id="projetoLei" class="data-tabela" th:href="@{/projetosLei/{id}(id=${projetoLei.id})}" th:text="${projetoLei.titulo}"></a></td>
+                        </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

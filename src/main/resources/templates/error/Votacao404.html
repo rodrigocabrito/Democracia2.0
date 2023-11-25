@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/css/errorsStyle.css"/>
+  <title>404 Votacao Not Found</title>
+</head>
+<body>
+<section>
+  <section>
+    <div class="form-box">
+      <form action="redirect:/votacoes/">
+        <div class="form-img">
+          <img src="/images/404-error.png" alt="404 error">
+        </div>
+
+        <div class="form-data">
+          <h2>Votacao não encontrada...</h2>
+          <div class="form-submit">
+            <button>
+              <a th:href="@{/home}">Ok</a>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</section>
+</body>
+
+</html>

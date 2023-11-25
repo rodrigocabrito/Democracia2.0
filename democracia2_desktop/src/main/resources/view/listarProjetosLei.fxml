@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+
+<StackPane fx:controller="com.example.democracia2_desktop.presentation.controllers.PresentationProjetoLeiController"
+           xmlns:fx="http://javafx.com/fxml/1">
+
+    <VBox spacing="10">
+        <padding>
+            <Insets top="10" left="10" right="10" bottom="10"/>
+        </padding>
+        <Button fx:id="goToMenuButton" text="← Voltar" onAction="#goToMenuView" />
+        <ListView fx:id="listView" onMouseClicked="#goToConsultarProjetoLeiView" />
+    </VBox>
+
+    </StackPane>

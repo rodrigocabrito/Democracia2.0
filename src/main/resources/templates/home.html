@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+  <title>Democracia 2.0</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+
+<body>
+    <section>
+    <div class="container">
+        <div class="home-button">
+            <a th:href="@{/login}">
+                <button>Logout</button>
+            </a>
+        </div>
+        <div class="form-box-home">
+            <form>
+                <h2>Democracia 2.0</h2>
+                <h3 th:if="${showNewProjetoLeiButton}">
+                    Delegado:
+                    <a th:text="${cidadao.nome}"></a>
+                </h3>
+                <h3 th:unless="${showNewProjetoLeiButton}">
+                    Cidadao:
+                    <a th:text="${cidadao.nome}"></a>
+                </h3>
+                <div class="form-data">
+                    <button>
+                      <a class="a_home" th:href="@{/projetosLei}">Lista Projetos de Lei</a>
+                    </button>
+                    <button th:if="${showNewProjetoLeiButton}">
+                        <a class="a_home" th:href="@{/projetosLei/new}">Apresentar Projeto Lei</a>
+                    </button>
+                    <button>
+                        <a class="a_home" th:href="@{/delegados}">Escolher Delegados</a>
+                    </button>
+                    <button>
+                      <a class="a_home" th:href="@{/votacoes}">Lista Votacoes</a>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+        </div>
+    </section>
+</body>
+
+</html>
